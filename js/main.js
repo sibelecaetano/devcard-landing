@@ -12,7 +12,7 @@ function toggleMenu() {
     navToggle.setAttribute('aria-expanded', !isOpen);
 
     //adiciona ou remove a classe que mostra o menu
-    mainNav.classList.toggle('open');
+    mainNav.classList.toggle('nav--open');
 
 }
 
