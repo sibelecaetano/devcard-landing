@@ -142,13 +142,12 @@ body {
 }
 
 .features-grid {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat (auto-fit, minmax(260px, 1fr));
   gap: var(--space-lg);
-  flex-wrap: wrap;
 }
 
 .feature-card {
-  flex: 1 1 260px;
   background: var(--color-bg);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
@@ -186,9 +185,9 @@ body {
 }
 
 .testimonials-grid {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: var(--space-lg);
-  flex-wrap: wrap;
 }
 
 .testimonial-card {
@@ -278,7 +277,7 @@ body {
 
   /* Features: 1 coluna */
   .features-grid {
-    flex-direction: column;
+    grid-template-columns: 1fr;
   }
 
   /* Footer: empilhado */
@@ -304,10 +303,12 @@ body {
 }
 
 .pricing-grid {
-  display: flex;
+  display: grid; 
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: var(--space-lg);
   justify-content: center;
-  flex-wrap: wrap;
+  max-width: 740px;
+  margin: 0 auto;
 }
 
 .pricing-card {
@@ -499,3 +500,19 @@ body {
   z-index: 100;
   position: relative; 
 }
+
+.layout {
+  display: grid;
+  grid-template-areas:
+    "header  header"
+    "sidebar main"
+    "footer  footer";
+  grid-template-columns: 240px 1fr;
+  grid-template-rows: 64px 1fr 48px;
+  min-height: 100vh;
+}
+
+.header  { grid-area: header; }
+.sidebar { grid-area: sidebar; }
+.main    { grid-area: main; }
+.footer  { grid-area: footer; }
