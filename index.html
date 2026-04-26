@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="DevCard — um link com tudo que importa sobre você como dev. Stack, projetos, contato. Sem ruído." />
+    <title>DevCard — Um link. Tudo que importa.</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet" />
+
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/variables.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a href="/" class="logo" aria-label="DevCard — página inicial">
+          DevCard
+        </a>
+
+        <!-- Hambúrguer: visível só no mobile via CSS -->
+        <button
+          class="nav-toggle"
+          aria-label="Abrir menu"
+          aria-expanded="false"
+          aria-controls="main-nav">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <nav id="main-nav" aria-label="Navegação principal">
+          <ul class="nav-links">
+            <li><a href="#features">Como funciona</a></li>
+            <li><a href="#depoimentos">Exemplos</a></li>
+            <li><a href="#pricing">Planos</a></li>
+          </ul>
+        </nav>
+
+        <a href="#pricing" class="btn btn-primary">Criar meu DevCard</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="container hero-inner">
+          <h1 id="hero-title">
+            Chega de mandar<br />
+            <span class="highlight">cinco links diferentes</span>
+          </h1>
+          <p class="hero-subtitle">
+            DevCard é seu cartão de visita como dev. Stack, projetos fixados e
+            contato num link só. O que a pessoa precisa saber sobre você em 30
+            segundos.
+          </p>
+          <div class="hero-actions">
+            <a href="#pricing" class="btn btn-primary">Criar meu DevCard</a>
+            <a href="#features" class="btn btn-ghost">Ver como funciona</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="features" id="features" aria-labelledby="features-title">
+        <div class="container">
+          <h2 id="features-title" class="section-title">
+            Tudo que importa. Nada que não importa.
+          </h2>
+
+          <div class="features-grid">
+            <article class="feature-card">
+              <div class="feature-icon" aria-hidden="true">🔗</div>
+              <h3>Um link para tudo</h3>
+              <p>
+                GitHub, portfólio, email, LinkedIn, Instagram: você escolhe o
+                que aparece. A outra pessoa vê só o que importa, no lugar certo.
+              </p>
+            </article>
+
+            <article class="feature-card">
+              <div class="feature-icon" aria-hidden="true">🗂️</div>
+              <h3>Projetos fixados</h3>
+              <p>
+                Escolha até 4 projetos para destacar. Nome, descrição curta e
+                link. Sem precisar que a pessoa navegue pelo seu GitHub inteiro
+                para achar o que você quer mostrar.
+              </p>
+            </article>
+
+            <article class="feature-card">
+              <div class="feature-icon" aria-hidden="true">⚙️</div>
+              <h3>Sua stack visível</h3>
+              <p>
+                Liste as tecnologias que você realmente usa. Sem endorsements,
+                sem quiz, sem barra de progresso inventada. Só o que você sabe
+                de verdade.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="testimonials"
+        id="depoimentos"
+        aria-labelledby="testimonials-title">
+        <div class="container">
+          <h2 id="testimonials-title" class="section-title">
+            O que devs falam depois de criar o DevCard
+          </h2>
+
+          <div class="testimonials-grid">
+            <article class="testimonial-card">
+              <blockquote>
+                <p>
+                  "Coloquei o link no final do currículo. O recrutador abriu
+                  antes de qualquer outra coisa. Na entrevista ele já sabia
+                  minha stack, meus projetos e tinha até pergunta pronta."
+                </p>
+              </blockquote>
+              <footer>
+                <cite>Ana B.</cite>
+                <span>Dev frontend · Fortaleza/CE</span>
+              </footer>
+            </article>
+
+            <article class="testimonial-card">
+              <blockquote>
+                <p>
+                  "Uso no evento de tecnologia quando alguém pede meu contato.
+                  Em vez de ficar digitando email na hora, só mostro o QR do meu
+                  DevCard."
+                </p>
+              </blockquote>
+              <footer>
+                <cite>Bruno D.</cite>
+                <span>Backend dev · Remoto</span>
+              </footer>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="pricing" id="pricing" aria-labelledby="pricing-title">
+        <div class="container">
+          <h2 id="pricing-title" class="section-title">Planos</h2>
+          <p class="section-subtitle">O DevCard é acessível para todo mundo!</p>
+
+          <div class="pricing-grid">
+            <!-- Plano gratuito -->
+            <article class="pricing-card">
+              <header class="pricing-card-header">
+                <h3>Grátis</h3>
+                <p class="pricing-price">
+                  <strong>R$ 0</strong>
+                  <span>/mês</span>
+                </p>
+              </header>
+              <ul class="pricing-features">
+                <li>1 DevCard personalizado</li>
+                <li>Até 4 projetos fixados</li>
+                <li>Suporte via email</li>
+              </ul>
+              <a href="#" class="btn btn-ghost">Criar meu DevCard grátis</a>
+            </article>
+
+            <!-- Plano Pro (destacado) -->
+            <article class="pricing-card pricing-card--featured">
+              <header class="pricing-card-header">
+                <span class="pricing-badge" aria-label="Plano recomendado">
+                  Mais escolhido
+                </span>
+                <h3>Pro</h3>
+                <p class="pricing-price">
+                  <strong>R$ 14,90</strong>
+                  <span>/mês</span>
+                </p>
+              </header>
+              <ul class="pricing-features">
+                <li>Tudo do gratuito</li>
+                <li>Projetos ilimitados</li>
+                <li>Domínio próprio</li>
+                <li>Analytics de visitas</li>
+                <li>QR Code do cartão</li>
+              </ul>
+              <a href="#" class="btn btn-primary">Começar Pro</a>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p class="logo">DevCard</p>
+        <p class="footer-copy">
+          <small>
+            © <time datetime="2026">2026</time> DevCard. Todos os direitos
+            reservados.
+          </small>
+        </p>
+        <nav aria-label="Links do rodapé">
+          <ul class="footer-links">
+            <li><a href="#">Privacidade</a></li>
+            <li><a href="#">Termos</a></li>
+            <li><a href="#">GitHub</a></li>
+          </ul>
+        </nav>
+      </div>
+    </footer>
+
+    <!-- Script sempre no final do body -->
+    <script src="js/main.js"></script>
+  </body>
+</html>
