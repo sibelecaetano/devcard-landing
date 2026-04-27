@@ -21,3 +21,25 @@ navLinks.forEach(function (link) {
     mainNav.classList.remove("nav--open");
   });
 });
+
+//intersection observer - detecta quando elementos entram na tela
+const revealElements = document.querySelectorAll(".reveal");
+
+const observer = new IntersectionObserver(
+  function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible')
+        //para de observar depois de animar, economiza memória
+        observer.unobserve(entry.target)
+      }
+    })
+  },
+  {
+    threshold: 0.1 //dispara quando 10% do elemento estiver visível
+  }
+)
+//registra cada elemento com a classe .reveal para ser observado
+revealElements.forEach(function (el) {
+  observer.observe(el)
+})
