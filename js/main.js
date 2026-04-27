@@ -43,3 +43,36 @@ const observer = new IntersectionObserver(
 revealElements.forEach(function (el) {
   observer.observe(el)
 })
+
+// Validação do formulário
+const form = document.querySelector('.contact-form')
+
+if (form) {
+  form.addEventListener('submit', function (e) {
+    e.preventDefault() // impede envio real por enquanto
+    let valid = true
+
+    // Valida cada campo obrigatório
+    form.querySelectorAll('[required]').forEach(function (field) {
+      const group = field.closest('.form-group')
+
+      if (!field.value.trim()) {
+        group.classList.add('error')
+        valid = false
+      } else {
+        group.classList.remove('error')
+      }
+    })
+
+    if (valid) {
+      form.innerHTML = '<p style="text-align:center; color: var(--color-primary); font-weight: 500;">✓ Mensagem enviada! Retornamos em breve.</p>'
+    }
+  })
+
+  // Remove erro ao digitar
+  form.querySelectorAll('input, textarea').forEach(function (field) {
+    field.addEventListener('input', function () {
+      field.closest('.form-group').classList.remove('error')
+    })
+  })
+}
