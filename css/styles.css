@@ -5,6 +5,82 @@ html {
   scroll-behavior: smooth;
 }
 
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg: #0d1117;
+    --color-surface: #161b22;
+    --color-text: #e6edf3;
+    --color-text-muted: #8b949e;
+    --color-border: #30363d;
+    --color-primary: #818cf8;
+    --color-primary-hover: #6366f1;
+  }
+
+  .site-header {
+    background-color: rgba(
+      13,
+      17,
+      23,
+      0.95
+    ) !important; /*no dia a dia não é bom utilizar o !important, nesse caso é justificado devido o dark mode que precisa sobrescever regras*/
+    border-bottom-color: #30363d;
+  }
+
+  .hero {
+    background: linear-gradient(to bottom, #161b22, #0d1117) !important;
+  }
+
+  .hero h1 {
+    color: var(--color-text);
+  }
+
+  .feature-card,
+  .pricing-card {
+    background-color: #161b22;
+    border-color: #30363d;
+  }
+
+  .pricing-card--featured {
+    border-color: var(--color-primary);
+  }
+
+  .testimonial-card {
+    background-color: #161b22;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    background-color: #161b22;
+    color: var(--color-text);
+    border-color: var(--color-border);
+  }
+
+  .btn-ghost {
+    border-color: #30363d;
+    color: var(--color-text-muted);
+  }
+
+  .btn-ghost:hover {
+    background-color: #161b22;
+    color: var(--color-text);
+  }
+
+@media (prefers-color-scheme: dark) {
+  #main-nav {
+    background-color: var(--color-surface);
+    border-bottom-color: var(--color-border);
+  }
+
+  #main-nav .nav-links a {
+    color: var(--color-text);
+  }
+
+  #main-nav .nav-links a:hover {
+    color: var(--color-primary);
+  }
+}
+}
+
 body {
   font-family: var(--font-sans);
   color: var(--color-text);
@@ -155,12 +231,19 @@ body {
   border-radius: var(--radius-lg);
   padding: var(--space-xl);
   box-shadow: var(--shadow-sm);
-  transition: box-shadow 0.2s, transform 0.2s;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
 }
 
 .feature-card:hover {
+  transform: translateY(-6px);
   box-shadow: var(--shadow-md);
-  transform: translateY(-2px);
+}
+
+.feature-card:active {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
 }
 
 .feature-icon {
@@ -388,7 +471,9 @@ body {
   height: 2px;
   background-color: var(--color-text);
   border-radius: 2px;
-  transition: transform 0.3s ease, opacity 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease;
 }
 
 .nav-toggle[aria-expanded="true"] span:nth-child(1) {
@@ -425,7 +510,8 @@ body {
     top: 64px;
     left: 0;
     right: 0;
-    background-color: #fff;
+
+    background-color: var(--color-bg);
     border-bottom: 1px solid var(--color-border);
     padding: var(--space-md) 0;
     z-index: 999;
@@ -480,7 +566,6 @@ body {
     text-align: center;
   }
 }
-
 /* ========================
    LAYOUT EXTRA
 ======================== */
@@ -519,7 +604,9 @@ body {
 .reveal {
   opacity: 0;
   transform: translateY(24px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
+  transition:
+    opacity 0.6s ease,
+    transform 0.6s ease;
 }
 
 /* Estado final: visível, adicionado pelo JS */
@@ -529,8 +616,12 @@ body {
 }
 
 /* Atraso em cascata para os cards filhos */
-.reveal:nth-child(2) { transition-delay: 0.1s; }
-.reveal:nth-child(3) { transition-delay: 0.2s; }
+.reveal:nth-child(2) {
+  transition-delay: 0.1s;
+}
+.reveal:nth-child(3) {
+  transition-delay: 0.2s;
+}
 
 /* ========================
    FORMULÁRIO
@@ -569,7 +660,9 @@ body {
   font-size: 1rem;
   color: var(--color-text);
   background-color: var(--color-bg);
-  transition: border-color 0.2s, box-shadow 0.2s;
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s;
   width: 100%;
 }
 
