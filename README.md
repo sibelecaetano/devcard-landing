@@ -75,8 +75,5 @@ A proposta foi implementar uma landing page completa sem dependência de framewo
 - JavaScript
 
 ---
-
-> Projeto desenvolvido com foco em evolução para atuação profissional como desenvolvedora frontend.
+> Projeto desenvolvido para fins de estudo e evolução em desenvolvimento frontend.
 ---
-
-Projeto desenvolvido para fins de estudo e evolução em desenvolvimento frontend.
